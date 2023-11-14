@@ -65,6 +65,7 @@ img {
 
 .thumbs {
     height: 300px;
+    width: 100%;
     background: #000;
     position: relative;
 }

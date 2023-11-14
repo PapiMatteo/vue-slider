@@ -7,29 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carosello News</title>
     <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 
 <body>
-    <div class="container">
-        <div class="flex-container">
-            <div class="items">
-                <div class="prev"></div>
-                <!-- <img class="item active" src="img/01.webp" alt="">
-                
-                <h3 class="img-title">Marvel's Spiderman Miles Morales</h3>
-                <p class="img-text"> Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.</p> -->
-                <div class="next"></div>
+    <div id="app">
+        <div class="container">
+            <div class="flex-container">
+                <div class="items">
+                    <div @click="showPrev" class="prev"></div>
+                    <img class="item active" :src="images[activeIndex].image" alt="">
+                    
+                    <h3 class="img-title">{{ images[activeIndex].title }}</h3>
+                    <p class="img-text">{{ images[activeIndex].text }}</p>
+                    <div @click="showNext" class="next"></div>
+                </div>
+                <div class="thumb">
+                    <img v-for="(curImg, index) in images" class="thumbs" :class="index === activeIndex ? 'selected':''" :src="curImg.image" alt="">
+                    
+                </div>
             </div>
-            <div class="thumb">
-                <!-- <img class="thumbs" src="img/01.webp" alt="">
-                <img class="thumbs" src="img/02.webp" alt="">
-                <img class="thumbs" src="img/03.webp" alt="">
-                <img class="thumbs" src="img/04.webp" alt="">
-                <img class="thumbs" src="img/05.webp" alt=""> -->
-            </div>
+            
         </div>
-        
     </div>
+    
 
     <!-- JS Script -->
     <script src="js/script.js"></script>
