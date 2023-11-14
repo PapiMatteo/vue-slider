@@ -24,7 +24,7 @@
                     <div @click="showNext" class="next"></div>
                 </div>
                 <div class="thumb">
-                    <img v-for="(curImg, index) in images" class="thumbs" :class="index === activeIndex ? 'selected':''" :src="curImg.image" alt="">
+                    <img v-for="(curImg, index) in images" class="thumbs" :class="index === activeIndex ? 'selected':''" :src="curImg.image" alt="" @click="showImage(index)">
                     
                 </div>
             </div>

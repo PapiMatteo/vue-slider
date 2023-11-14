@@ -43,6 +43,9 @@ createApp({
             } else {
                 this.activeIndex--;
             }
+        },
+        showImage: function(active) {
+            this.activeIndex = active
         }
     }
     
