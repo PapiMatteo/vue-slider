@@ -27,7 +27,11 @@ createApp({
                 }
             ],
             activeIndex: 0,
+            interval  : null,
         }
+    },
+    mounted() {
+        this.interval = setInterval(this.showNext, 3000);
     },
     methods : {
         showNext: function() {
@@ -46,7 +50,14 @@ createApp({
         },
         showImage: function(active) {
             this.activeIndex = active
+        },
+        stopInterval: function() {
+            clearInterval(this.interval)
+        },
+        restartInterval: function() {
+            this.interval = setInterval(this.showNext, 3000)
         }
+        
     }
     
 }).mount("#app");

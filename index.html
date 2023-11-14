@@ -17,7 +17,7 @@
             <div class="flex-container">
                 <div class="items">
                     <div @click="showPrev" class="prev"></div>
-                    <img class="item active" :src="images[activeIndex].image" alt="">
+                    <img @mouseover="stopInterval" @mouseleave="restartInterval" class="item active" :src="images[activeIndex].image" alt="">
                     
                     <h3 class="img-title">{{ images[activeIndex].title }}</h3>
                     <p class="img-text">{{ images[activeIndex].text }}</p>
