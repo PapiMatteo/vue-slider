@@ -22,10 +22,13 @@
                     <h3 class="img-title">{{ images[activeIndex].title }}</h3>
                     <p class="img-text">{{ images[activeIndex].text }}</p>
                     <div @click="showNext" class="next"></div>
-                </div>
+                </div>   
                 <div class="thumb">
-                    <img v-for="(curImg, index) in images" class="thumbs" :class="index === activeIndex ? 'selected':''" :src="curImg.image" alt="" @click="showImage(index)">
-                    
+                    <div  v-for="(curImg, index) in images" class="thumbs" :class="index === activeIndex ? 'selected':''">
+                        <img class="thumbs" :src="curImg.image" alt="" @click="showImage(index)"> 
+                    </div>
+                           
+
                 </div>
             </div>
             
