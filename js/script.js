@@ -40,13 +40,17 @@ createApp({
             } else {
                 this.activeIndex++;
             };
+            this.stopInterval();
+            this.restartInterval();
         },
         showPrev: function() {
             if(this.activeIndex === 0) {
                 this.activeIndex = this.images.length -1;
             } else {
                 this.activeIndex--;
-            }
+            };
+            this.stopInterval();
+            this.restartInterval();
         },
         showImage: function(active) {
             this.activeIndex = active;
