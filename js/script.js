@@ -49,7 +49,9 @@ createApp({
             }
         },
         showImage: function(active) {
-            this.activeIndex = active
+            this.activeIndex = active;
+            this.stopInterval();
+            this.restartInterval();
         },
         stopInterval: function() {
             clearInterval(this.interval)
